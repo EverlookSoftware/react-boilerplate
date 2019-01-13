@@ -7,15 +7,11 @@ module.exports = {
   entry: {
     app: './src/index.js',
   },
-  plugins: [
-    new CleanWebpackPlugin(['dist']),
-    new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: 'index.html',
-      inject: true,
-    }),
-    new webpack.HotModuleReplacementPlugin(),
-  ],
+  output: {
+    path: path.join(__dirname, '/dist'),
+    publicPath: '/',
+    filename: '[name].bundle.js',
+  },
   module: {
     rules: [
       {
@@ -40,9 +36,12 @@ module.exports = {
       '@': path.resolve(__dirname, 'src/'),
     },
   },
-  output: {
-    path: path.join(__dirname, '/dist'),
-    publicPath: '/',
-    filename: '[name].bundle.js',
-  },
+  plugins: [
+    new CleanWebpackPlugin(['dist']),
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: './static/index.html',
+    }),
+    new webpack.HotModuleReplacementPlugin(),
+  ],
 };

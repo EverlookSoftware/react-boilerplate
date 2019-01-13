@@ -16,6 +16,6 @@ const Counter = () => {
       </button>
     </div>
   );
-}
+};
 
 export default Counter;
