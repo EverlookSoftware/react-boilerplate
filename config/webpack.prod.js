@@ -5,7 +5,7 @@ const merge = require('webpack-merge');
 const config = require('./webpack.config.js');
 
 /**
- * Eventually we wiil generate a '.env' file during CI/CD
+ * Eventually we will generate a '.env' file during CI/CD
  * which will be parsed here using
  * dotenv.parsed
  */
