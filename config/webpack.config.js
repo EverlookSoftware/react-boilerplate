@@ -39,8 +39,8 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      filename: 'index.html',
       template: './static/index.html',
+      title: 'React Boilerplate', // Replace with ENV variable
     }),
     new webpack.HotModuleReplacementPlugin(),
   ],
