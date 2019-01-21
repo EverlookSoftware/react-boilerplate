@@ -9,6 +9,8 @@ module.exports = {
   env: {
     development: {},
     production: {},
-    test: {},
+    test: {
+      presets: ['@babel/preset-env'],
+    },
   },
 };
