@@ -9,7 +9,7 @@ module.exports = {
     app: './src/index.js',
   },
   output: {
-    path: path.join(__dirname, '/dist'),
+    path: path.join(__dirname, '..', '/dist'),
     publicPath: '/',
     filename: '[name].bundle.js',
   },
@@ -46,7 +46,12 @@ module.exports = {
     },
   },
   plugins: [
-    new CleanWebpackPlugin(['dist']),
+    new CleanWebpackPlugin(
+      ['dist'],
+      {
+        root: process.cwd(),
+      },
+    ),
     new HtmlWebpackPlugin({
       template: './static/index.html',
       title: 'React Boilerplate', // Replace with ENV variable
