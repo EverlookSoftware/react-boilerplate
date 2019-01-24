@@ -14,6 +14,7 @@ module.exports = merge(config, {
      */
     historyApiFallback: true,
     contentBase: './dist',
+    quiet: true,
     overlay: true,
     hot: true,
   },
