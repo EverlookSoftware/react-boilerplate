@@ -3,6 +3,10 @@ const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+const inDevelopment = process.env.NODE_ENV !== 'production';
+const htmlTitle = process.env.HTML_TITLE || 'React Boilerplate';
 
 module.exports = {
   entry: {
@@ -32,7 +36,7 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          'style-loader',
+          inDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
           'css-loader',
           'postcss-loader',
         ],
@@ -54,12 +58,16 @@ module.exports = {
     ),
     new HtmlWebpackPlugin({
       template: './static/index.html',
-      title: 'React Boilerplate', // Replace with ENV variable
+      title: htmlTitle,
+    }),
+    new MiniCssExtractPlugin({
+      filename: inDevelopment ? '[name].css' : '[name].[hash].css',
+      chunkFilename: inDevelopment ? '[id].css' : '[id].[hash].css',
     }),
     new webpack.HotModuleReplacementPlugin(),
     new FriendlyErrorsWebpackPlugin({
       compilationSuccessInfo: {
-        messages: ['Your application is running here http://localhost:8080'], // Replace PORT with ENV variable
+        messages: ['Your application is running here http://localhost:8080'],
       },
     }),
   ],
