@@ -8,7 +8,7 @@
     "build": "NODE_ENV=production webpack --config ./config/webpack.prod.js",
     "test": "jest"
   },
-  "author": "Dillon Chanis <dillonchanis92@gmail.com> (http://dillonchanis.com/)",
+  "author": "Dillon Chanis, Brodey Newman",
   "license": "MIT",
   "dependencies": {
     "@babel/polyfill": "7.2.5",

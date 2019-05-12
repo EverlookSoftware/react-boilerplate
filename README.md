@@ -76,3 +76,13 @@ The `src/` directory contains all the source code for your application as well a
 ### `static/`
 
 Holds any static files for your application and the `index.html` file the application uses.
+
+## Deployment
+
+This project assumes that you will be deploying your UI to s3 static hosting. If that's not the case, ignore this.
+
+In order to deploy correctly, you must do a few things:
+
+* Set up your circle-ci account and enter your AWS credentials into the platform for your repository.
+* Change the dev and prod buckets inside of `scripts/deploy.sh` to point to your buckets.
+* If you have any custom .env variables, you can define them inside of `scripts/build.sh`. This file will generate a `.env` file during CI/CD, and your production webpack config will parse it and feed it into your bundle during build time.
