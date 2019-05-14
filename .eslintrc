@@ -1,6 +1,7 @@
 {
   "parser": "babel-eslint",
   "extends": ["airbnb"],
+  "plugins": ["react-hooks"],
   "rules": {
     "react/jsx-one-expression-per-line": 0,
     "react/jsx-filename-extension": [
@@ -8,6 +9,8 @@
       {
         "extensions": [".js", ".jsx"]
       }
-    ]
+    ],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
   }
 }
