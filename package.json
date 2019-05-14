@@ -50,7 +50,7 @@
     "react-hot-loader": "4.6.3",
     "react-test-renderer": "16.7.0",
     "style-loader": "0.23.1",
-    "tailwindcss": "0.7.3",
+    "tailwindcss": "1.0.1",
     "uglifyjs-webpack-plugin": "2.1.1",
     "webpack": "4.28.4",
     "webpack-cli": "3.2.1",
